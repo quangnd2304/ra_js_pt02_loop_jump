@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6</title>
+</head>
+
+<body>
+    <script>
+        // B1: Nhập month (1-->12), year
+        let month = parseInt(prompt("Nhập vào tháng"));
+        let year = parseInt(prompt("Nhập vào năm"));
+        // B2: xét month --> số ngày
+        let days;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                days = 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                days = 30;
+                break;
+            default:
+                // tháng 2
+                if (year % 4 == 0 || (year % 100 == 0 && year % 400 == 0)) {
+                    days = 29;
+                } else {
+                    days = 28;
+                }
+        }
+        console.log("Số ngày trong tháng là: ", days);
+    </script>
+</body>
+
+</html>

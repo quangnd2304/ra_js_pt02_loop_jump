@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 4</title>
+</head>
+
+<body>
+    <script>
+        /*
+            Nhập vào số điện tiêu thụ cũ (cuối tháng trước) và
+            số điện tiêu thụ mới (cuối tháng hiện tại). Tính
+            số tiền phải đóng của khách hàng biết
+                - Tiền thuê bao điện: 10000/tháng
+                - Tiền điện tiêu thụ được tính:
+                    + 0<số điện tiêu thụ tháng<=50: 700/số
+                    + 50<sdttt<=100: 900/số
+                    + 100<sdttt<=150: 1100/số
+                    + sdttt>150: 1300/số
+            Input: chỉ số mới, chỉ số cũ,
+                    TB = 10000,
+                    Giá tiền điện theo định mức
+            Output: Số tiền trả trong tháng
+        */
+        // B1: Nhập vào chỉ số mới và chỉ số cũ
+        let chiSoCu = parseFloat(prompt("Nhập vào chỉ số cũ"));
+        let chiSoMoi = parseFloat(prompt("Nhập vào chỉ số mới"));
+        // B2: Tính số điện tiêu thụ trong tháng
+        let soDienTT = chiSoMoi - chiSoCu;
+        // B3: Tính số tiền trả trong tháng
+        let tienTT = 10000;
+        if (soDienTT <= 50) {
+            tienTT += soDienTT * 700;
+        } else if (soDienTT <= 100) {
+            tienTT += 50 * 700 + (soDienTT - 50) * 900;
+        } else if (soDienTT <= 150) {
+            tienTT += 50 * 700 + 50 * 900 + (soDienTT - 100) * 1100;
+        } else {
+            tienTT += 50 * 700 + 50 * 900 + 50 * 1100 + (soDienTT - 150) * 1300;
+        }
+        // B4: In ra số tiền trả trong tháng
+        console.log("Số tiển phải trả trong tháng là: ", tienTT);
+    </script>
+</body>
+
+</html>

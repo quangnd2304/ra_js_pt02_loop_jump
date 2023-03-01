@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 5</title>
+</head>
+
+<body>
+    <script>
+        // Nhập vào 3 cạnh a,b,c
+        let a = parseFloat(prompt("Nhập vào cạnh a"));
+        let b = parseFloat(prompt("Nhập vào cạnh b"));
+        let c = parseFloat(prompt("Nhập vào cạnh c"));
+        // Xét tam giá: Thường, cân, vuông cân, đều, vuông
+        if ((a + b) > c && (a + c) > b && (c + b) > a) {
+            // Tam giác
+            if (((a == b) && (b != c) && (a * a + b * b == c * c)) || ((b == c) && (c != a) && (b * b + c * c == a * a))) {
+                console.log("Tam giác vuông cân");
+            } else if (a == b && b == c) {
+                console.log("Tam giác đều");
+            } else if ((a == b && b != c) || (b == c && c != a) || (c == a && a != b)) {
+                console.log("Tam giác cân");
+            } else if ((a * a + b * b == c * c) || (a * a + c * c == b * b) || (b * b + c * c == a * a)) {
+                console.log("Tam giác vuông");
+            } else {
+                console.log("Tam giác thường");
+            }
+        } else {
+            console.log("Ba cạnh không phải là một tam giác");
+        }
+
+    </script>
+</body>
+
+</html>
